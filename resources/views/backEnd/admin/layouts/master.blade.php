@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="{{ asset('/') }}backEnd/admin/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('/') }}backEnd/admin/plugins/summernote/summernote-bs4.min.css">
- 
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -35,9 +35,9 @@
   @include('backEnd.admin.partials.sidebar')
   @yield('content')
 
- 
 
-  
+
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -90,13 +90,6 @@
   <script src="{{ asset('/') }}backEnd/admin/dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="{{ asset('/') }}backEnd/admin/dist/js/pages/dashboard.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('#tableData').dataTable();
-    });
-    
-
-
-  </script>
+  @yield('scripts')
 </body>
 </html>

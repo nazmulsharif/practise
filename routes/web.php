@@ -16,11 +16,11 @@ use App\Http\Controllers\backEnd\SliderController;
 |
 */
 
- 
+
  /*---FrontEnd Routes Start ------------ --------------------*/
   Route::get('/',[PagesController::class,'index'])->name('frontEnd.home');
  Route::prefix('frontEnd')->group(function(){
- 	
+
 	 Route::get('about-us',[PagesController::class,'about'])->name('frontEnd.about_us');
 	 Route::get('services',[PagesController::class,'services'])->name('frontEnd.services');
 	 Route::get('blog',[PagesController::class,'blog'])->name('frontEnd.blog');
@@ -73,7 +73,20 @@ Route::prefix('slider')->group(function(){
  	Route::get('trash',[SliderController::class, 'trash'])->name('slider.trash');
  	Route::get('restore/{id}',[SliderController::class, 'restore'])->name('slider.restore');
  });
-/*------------------ Logo Routes End---------------*/
+/*------------------ Slider Routes End---------------*/
+
+Route::prefix('aboutSection')->group(function(){
+    Route::get('manage',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'index'])->name('aboutSection.manage');
+    Route::get('create',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'create'])->name('aboutSection.create');
+    Route::post('store',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'store'])->name('aboutSection.store');
+    Route::get('edit/{id}',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'edit'])->name('aboutSection.edit');
+    Route::post('update/{id}',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'update'])->name('aboutSection.update');
+    Route::get('delete/{id}',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'destroy'])->name('aboutSection.delete');
+    Route::post('status/{id}',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'statusChange'])->name('aboutSection.status');
+    Route::get('trash',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'trash'])->name('aboutSection.trash');
+    Route::get('restore/{id}',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'restore'])->name('aboutSection.restore');
+});
+/*------------------ Slider Routes End---------------*/
 
 
   /*---BackEnd Routes End ------------ --------------------*/

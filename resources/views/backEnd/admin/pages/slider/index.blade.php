@@ -39,26 +39,26 @@
                   <div class="float-sm-right mb-2">
                      <a href="{{ Route('slider.trash')}}" class="btn btn-danger">Trash</a>
                   </div>
-                 
+
 		          		<table class="table table-info" id="tableData"style="table-layout: fixed">
 		          			<thead>
 		          				<th>Sl</th>
 		          				<th>Title</th>
 		          				<th>Image</th>
-                      <th>Slider Description</th>
-                      <th>Status</th>
-                      <th>User Name</th>
-                      <th>Priority</th>
+                                  <th>Slider Description</th>
+                                  <th>Status</th>
+                                  <th>User Name</th>
+                                  <th>Priority</th>
 		          				<th>Action</th>
 		          			</thead>
 		          			<tbody>
 		          			@foreach($sliders as $key=>$slider)
-                      <tr> 
+                      <tr>
                           <td>{{ $key+1 }}  </td>
-                          <td> {{ @$slider->title }}</td> 
+                          <td> {{ @$slider->title }}</td>
                           <td>
                             <img src="{{ Storage::url($slider->image) }}" alt="" width="100">
-                          </td> 
+                          </td>
                           <td>
                             {{  @$slider->slider_text }}
                           </td>
@@ -75,7 +75,7 @@
                           <td>
                             {{ $slider->priority }}
                           </td>
-                          <td>  
+                          <td>
                             <a href="{{ Route('slider.edit', $slider->id) }}" class="btn btn-primary">
                               <i class="fa fa-edit"></i>
                             </a>
@@ -90,10 +90,10 @@
 		          	</div>
          		 </div>
         	</div>
-          
+
         </div>
         <!-- /.row -->
-       
+
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
