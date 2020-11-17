@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="{{ asset('/') }}backEnd/admin/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('/') }}backEnd/admin/plugins/summernote/summernote-bs4.min.css">
+ 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -54,39 +55,48 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="{{ asset('/') }}backEnd/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/moment/moment.min.js"></script>
-<script src="{{ asset('/') }}backEnd/admin/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="{{ asset('/') }}backEnd/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('/') }}backEnd/admin/dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('/') }}backEnd/admin/dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('/') }}backEnd/admin/dist/js/pages/dashboard.js"></script>
+  <!-- jQuery -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="{{ asset('/') }}backEnd/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/moment/moment.min.js"></script>
+  <script src="{{ asset('/') }}backEnd/admin/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="{{ asset('/') }}backEnd/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="{{ asset('/') }}backEnd/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="{{ asset('/') }}backEnd/admin/dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{{ asset('/') }}backEnd/admin/dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="{{ asset('/') }}backEnd/admin/dist/js/pages/dashboard.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#tableData').dataTable();
+    });
+    
+
+
+  </script>
 </body>
 </html>

@@ -17,19 +17,17 @@ class UserController extends Controller
      */
     public function __construct()
     {
+        if(Auth::user()->user_type != "super_admin"){
+            return back();
+        }
         $this->middleware('auth');
     }
     public function index()
     {
 
-        if(Auth::user()->user_type == "admin"){
-            $users = User::where('user_type','user')->get();
-            return view('backEnd.admin.pages.user.index')->with('users', $users);
-        }
-        else{
-            return back();
-        }
-        
+       
+        $users = User::where('user_type','admin')->get();
+        return view('backEnd.admin.pages.user.index')->with('users');
     }
 
     /**
@@ -63,7 +61,6 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->gender = $request->gender;
-        $user->user_type = "user";
         if($request->hasFile('image')){
             $image = $request->image->store('public/user/images');
             $user->image = $image;
@@ -188,5 +185,18 @@ class UserController extends Controller
        }
 
         
+    }
+    public function statusChange(Request $request, $id){
+        $user = User::find($id);
+        $status = $request->status;
+        if($status){
+            $user->status = 0;
+        }
+        else{
+             $user->status = 1;
+        }
+        $user->save();
+        return back();
+       
     }
 }

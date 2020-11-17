@@ -44,6 +44,7 @@
 		          				<th>Image</th>
                       <th>Gender</th>
                       <th>User Role</th>
+                      <th>Status</th>
 		          				<th>Action</th>
 		          			</thead>
 		          			<tbody>
@@ -60,6 +61,13 @@
                         </td>
 		          					<td>
                             {{ $user->user_type }}       
+                        </td>
+                        <td>
+                          <form action="{{Route('user.status', $user->id)}}" method ="post">
+                            @csrf
+                            <input type="hidden" value="{{$user->status}}" name="status">
+                            <input type="submit" class="btn {{ $user->status ==true?'btn-success':'btn-danger'}}" value="{{ $user->status == true?'active':'deactive' }}">
+                          </form>
                         </td>
                         <td>  
                           <a href="{{ Route('user.edit', $user->id) }}" class="btn btn-primary">
