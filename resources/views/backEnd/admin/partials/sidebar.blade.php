@@ -102,6 +102,29 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item {{ Route::is('recentWorks.manage')|| Route::is('recentWorksCategory.manage')? 'menu-open': ''}}">
+                <a href="#" class="nav-link bg-info">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                        RecentWorks Manage
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ Route('recentWorksCategory.manage') }}" class="nav-link {{ Route::is('recentWorksCategory.manage')? 'active':''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Manage WorksCategory</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ Route('recentWorks.manage') }}" class="nav-link {{ Route::is('recentWorks.manage')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Manage Works</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
           @if(Auth::user()->user_type == "super_admin")
           <li class="nav-item {{ Route::is('user.manage')||Route::is('user.add')? 'menu-open': ''}}">

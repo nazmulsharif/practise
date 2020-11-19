@@ -5,6 +5,8 @@ use App\Http\Controllers\frontEnd\PagesController;
 use App\Http\Controllers\backEnd\UserController;
 use App\Http\Controllers\backEnd\LogoController;
 use App\Http\Controllers\backEnd\SliderController;
+use App\Http\Controllers\backEnd\RecentWorksCategoryController;
+use App\Http\Controllers\backEnd\RecentWorksController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,9 +88,33 @@ Route::prefix('aboutSection')->group(function(){
     Route::get('trash',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'trash'])->name('aboutSection.trash');
     Route::get('restore/{id}',[\App\Http\Controllers\backEnd\AboutSectionController::class, 'restore'])->name('aboutSection.restore');
 });
-/*------------------ Slider Routes End---------------*/
+/*------------------ aboutSection Routes End---------------*/
 
+Route::prefix('recentWorksCategory')->group(function(){
+    Route::get('manage',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'index'])->name('recentWorksCategory.manage');
+    Route::get('create',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'create'])->name('recentWorksCategory.create');
+    Route::post('store',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'store'])->name('recentWorksCategory.store');
+    Route::get('edit/{id}',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'edit'])->name('recentWorksCategory.edit');
+    Route::post('update/{id}',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'update'])->name('recentWorksCategory.update');
+    Route::get('delete/{id}',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'destroy'])->name('recentWorksCategory.delete');
+    Route::post('status/{id}',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'statusChange'])->name('recentWorksCategory.status');
+    Route::get('trash',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'trash'])->name('recentWorksCategory.trash');
+    Route::get('restore/{id}',[\App\Http\Controllers\backEnd\RecentWorksCategoryController::class, 'restore'])->name('recentWorksCategory.restore');
+});
+/*------------------ recentWorksCategory Routes End---------------*/
 
+Route::prefix('recentWorks')->group(function(){
+    Route::get('manage',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'index'])->name('recentWorks.manage');
+    Route::get('create',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'create'])->name('recentWorks.create');
+    Route::post('store',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'store'])->name('recentWorks.store');
+    Route::get('edit/{id}',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'edit'])->name('recentWorks.edit');
+    Route::post('update/{id}',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'update'])->name('recentWorks.update');
+    Route::get('delete/{id}',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'destroy'])->name('recentWorks.delete');
+    Route::post('status/{id}',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'statusChange'])->name('recentWorks.status');
+    Route::get('trash',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'trash'])->name('recentWorks.trash');
+    Route::get('restore/{id}',[\App\Http\Controllers\backEnd\RecentWorksController::class, 'restore'])->name('recentWorks.restore');
+});
+/*------------------ recentWorksCategory Routes End---------------*/
   /*---BackEnd Routes End ------------ --------------------*/
 
 

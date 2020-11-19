@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\frontEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\RecentWorksCategory;
 use Illuminate\Http\Request;
 use App\Models\Logo;
 use DB;
 use App\Models\Slider;
 use App\Models\AboutSection;
+use App\Models\RecentWorks;
 class PagesController extends Controller
 {
 
@@ -16,9 +18,11 @@ class PagesController extends Controller
             'status'=> 1,
 
         ])->orderBy('priority','asc')->get();
-
+        $categories = RecentWorksCategory::all();
         $aboutSections = AboutSection::all();
-    	return view('frontEnd.pages.home', compact('sliders', 'aboutSections'));
+        $recentWorks = RecentWorks::all();
+
+    	return view('frontEnd.pages.home', compact('sliders','recentWorks', 'categories','aboutSections'));
     }
     public function about(){
 

@@ -67,8 +67,8 @@
                       <td>{{ $aboutSection->description }}</td>
                       <td>
                           <ol>
-                              @foreach($array as $key=>$arr)
-                                 <li>@php print_r($arr) @endphp</li>
+                              @foreach($array as $arr)
+                                 <li>{{ $arr }} </li>
                               @endforeach
                           </ol>
                       </td>

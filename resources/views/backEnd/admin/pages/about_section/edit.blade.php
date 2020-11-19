@@ -104,7 +104,7 @@
                                             <div class="field_wrapper">
                                                 @foreach ($array as $key =>$arr)
                                                 <div>
-                                                    <textarea name = "list[]" class="list mb-1"  id="list">{{ print_r($arr) }}</textarea>
+                                                    <textarea name = "list[]" class="list mb-1"  id="list">{{ $arr }}</textarea>
                                                     @if(end($array)!=$array[$key]) <a href="javascript:void(0);" class="remove_button">x</a> @endif
                                                     @if(end($array)==$array[$key])
                                                      <a href="javascript:void(0);" class="add_button" title="Add field">add</a>
